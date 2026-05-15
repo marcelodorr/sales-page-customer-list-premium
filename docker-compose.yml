@@ -1,0 +1,11 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    networks:
+      - dokploy-network
+
+networks:
+  dokploy-network:
+    external: true
