@@ -42,12 +42,12 @@ img { max-width: 100%; display: block; }
 /* ---------- TOP BAR ---------- */
 .topbar {
   background: linear-gradient(90deg, var(--red-deep), var(--red), var(--red-deep));
-  color: white;
+  color: yellow;
   text-align: center;
   padding: 10px 16px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 700;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   position: relative;
   z-index: 10;
 }
