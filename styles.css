@@ -1121,6 +1121,80 @@ footer {
   transform: translateY(0);
 }
 
+/* ---------- PRICE COUNTDOWN ---------- */
+.price-countdown {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-dim);
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+}
+.price-countdown strong {
+  color: var(--red-bright);
+  font-size: 17px;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- CTA SOCIAL PROOF ---------- */
+.cta-people-watching {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 10px;
+  text-align: center;
+}
+.cta-people-watching span {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* ---------- SPOTS COUNTER ---------- */
+.spots-counter {
+  margin: 20px auto 30px;
+  max-width: 560px;
+  text-align: center;
+}
+.spots-bar-wrap {
+  height: 8px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 99px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.spots-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--red), var(--red-bright));
+  border-radius: 99px;
+  transition: width 1s ease;
+}
+.spots-text {
+  font-size: 14px;
+  color: var(--text);
+}
+.spots-text strong { color: var(--red-bright); }
+
+/* ---------- TESTIMONIALS VERIFIED ---------- */
+.testi-verified {
+  font-size: 11px;
+  color: var(--green);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+/* ---------- MID-PAGE CTA ---------- */
+.mid-cta-wrap {
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+.mid-cta-sub {
+  font-size: 13px;
+  color: var(--text-dim);
+  margin-top: 12px;
+}
+
 /* ---------- SAFE PAYMENT BAR ---------- */
 .safe-bar {
   display: flex;
