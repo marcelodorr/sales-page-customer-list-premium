@@ -1,5 +1,6 @@
 window.SITE_CONFIG = {
   checkoutUrl: "${CHECKOUT_URL}",
+  metaPixelId: "${META_PIXEL_ID}",
   whatsappNumber: "${WHATSAPP_NUMBER}",
   whatsappMessage: "${WHATSAPP_MESSAGE}",
   priceOld: "${PRICE_OLD}",

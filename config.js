@@ -1,5 +1,6 @@
 window.SITE_CONFIG = {
   checkoutUrl: "https://pay.hotmart.com/H105816474H",
+  metaPixelId: "1480648363468725",
   whatsappNumber: "5551993802574",
   whatsappMessage: "Olá, Tenho interesse na Lista de Fornecedores!",
   priceOld: "R$ 197,00",

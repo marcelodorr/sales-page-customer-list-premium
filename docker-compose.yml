@@ -5,6 +5,7 @@ services:
       dockerfile: Dockerfile
     environment:
       CHECKOUT_URL: ${CHECKOUT_URL:-https://pay.hotmart.com/H105816474H}
+      META_PIXEL_ID: ${META_PIXEL_ID:-1480648363468725}
       WHATSAPP_NUMBER: ${WHATSAPP_NUMBER:-5551993802574}
       WHATSAPP_MESSAGE: ${WHATSAPP_MESSAGE:-Olá, Tenho interesse na Lista de Fornecedores!}
       PRICE_OLD: ${PRICE_OLD:-R$ 197,00}

@@ -7,6 +7,8 @@
 <title>O Segredo por Trás das Maiores Lojas do Brasil Está Nesta Lista | Fornecedores Brás e 25 de Março</title>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
 
+<script src="config.js"></script>
+
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -17,19 +19,29 @@ n.queue=[];t=b.createElement(e);t.async=!0;
 t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1480648363468725');
-fbq('track', 'PageView');
+var META_PIXEL_ID = (window.SITE_CONFIG && window.SITE_CONFIG.metaPixelId) || '';
+if (META_PIXEL_ID) {
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
 </script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1480648363468725&ev=PageView&noscript=1"
-/></noscript>
+<noscript id="meta-pixel-noscript"></noscript>
+<script>
+  (function() {
+    var id = (window.SITE_CONFIG && window.SITE_CONFIG.metaPixelId) || '';
+    if (!id) return;
+    var img = document.createElement('img');
+    img.height = 1; img.width = 1; img.style.display = 'none';
+    img.src = 'https://www.facebook.com/tr?id=' + encodeURIComponent(id) + '&ev=PageView&noscript=1';
+    document.getElementById('meta-pixel-noscript').appendChild(img);
+  })();
+</script>
 <!-- End Meta Pixel Code -->
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script src="config.js"></script>
 
 </head>
 <body>
