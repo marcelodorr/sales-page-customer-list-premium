@@ -3,6 +3,17 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
+    environment:
+      CHECKOUT_URL: ${CHECKOUT_URL:-https://pay.hotmart.com/H105816474H}
+      WHATSAPP_NUMBER: ${WHATSAPP_NUMBER:-5551993802574}
+      WHATSAPP_MESSAGE: ${WHATSAPP_MESSAGE:-Olá, Tenho interesse na Lista de Fornecedores!}
+      PRICE_OLD: ${PRICE_OLD:-R$ 197,00}
+      PRICE_OLD_SHORT: ${PRICE_OLD_SHORT:-R$197}
+      PRICE_OLD_ROUND: ${PRICE_OLD_ROUND:-R$ 197}
+      PRICE_NEW_INT: ${PRICE_NEW_INT:-29}
+      PRICE_NEW_CENTS: ${PRICE_NEW_CENTS:-,90}
+      PRICE_INSTALLMENT: ${PRICE_INSTALLMENT:-4x de R$ 8,14}
+      VALUE_STACK_TOTAL: ${VALUE_STACK_TOTAL:-R$ 341,00}
     networks:
       - dokploy-network
 

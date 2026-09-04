@@ -1,0 +1,12 @@
+window.SITE_CONFIG = {
+  checkoutUrl: "${CHECKOUT_URL}",
+  whatsappNumber: "${WHATSAPP_NUMBER}",
+  whatsappMessage: "${WHATSAPP_MESSAGE}",
+  priceOld: "${PRICE_OLD}",
+  priceOldShort: "${PRICE_OLD_SHORT}",
+  priceOldRound: "${PRICE_OLD_ROUND}",
+  priceNewInt: "${PRICE_NEW_INT}",
+  priceNewCents: "${PRICE_NEW_CENTS}",
+  priceInstallment: "${PRICE_INSTALLMENT}",
+  valueStackTotal: "${VALUE_STACK_TOTAL}"
+};
