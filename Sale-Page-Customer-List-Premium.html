@@ -577,6 +577,30 @@ if (META_PIXEL_ID) {
   <a href="https://pay.hotmart.com/H105816474H" class="btn-cta js-checkout-link" onclick="fbq('track', 'InitiateCheckout');">QUERO AGORA →</a>
 </div>
 
+<!-- Urgency popup -->
+<div class="urgency-modal" id="urgency-modal" role="dialog" aria-modal="true" aria-labelledby="urgency-modal-title" hidden>
+  <div class="urgency-modal-backdrop" data-close-urgency></div>
+  <div class="urgency-modal-card" role="document">
+    <button class="urgency-modal-close" type="button" aria-label="Fechar aviso" data-close-urgency>×</button>
+    <div class="urgency-modal-kicker">ATENÇÃO: SUA CONDIÇÃO ESTÁ ATIVA</div>
+    <h2 id="urgency-modal-title">Não deixe para depois o que pode destravar suas vendas <span>agora.</span></h2>
+    <p class="urgency-modal-copy">Você já encontrou os contatos certos. Adiar é continuar procurando no escuro, pagando caro e perdendo tempo. Entre hoje, abra a lista e fale com fornecedores reais ainda nesta sessão.</p>
+    <div class="urgency-modal-offer">
+      <div>
+        <small>Preço promocional desta sessão</small>
+        <strong class="js-price-new-full">R$ 29,90</strong>
+      </div>
+      <div class="urgency-modal-timer">
+        <small>Termina em</small>
+        <strong id="modal-timer">--:--</strong>
+      </div>
+    </div>
+    <a href="https://pay.hotmart.com/H105816474H" class="btn-cta js-checkout-link" onclick="fbq('track', 'InitiateCheckout');">QUERO DESTRAVAR AGORA <span class="arrow">→</span></a>
+    <p class="urgency-modal-reassure">Acesso imediato · garantia de 7 dias · pagamento seguro via Hotmart</p>
+    <button class="urgency-modal-later" type="button" data-close-urgency>Prefiro continuar pesquisando</button>
+  </div>
+</div>
+
 <!-- WhatsApp Floating Button -->
 <a href="https://wa.me/5551993802574?text=Ol%C3%A1%2C%20Tenho%20interesse%20na%20Lista%20de%20Fornecedores!" target="_blank" rel="noopener noreferrer" class="whatsapp-float js-whatsapp-link" aria-label="Falar no WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" fill="white">
@@ -684,11 +708,38 @@ if (META_PIXEL_ID) {
       const display = m + ':' + s;
       const topbar = document.getElementById('topbar-timer');
       const hero = document.getElementById('hero-timer');
+      const modal = document.getElementById('modal-timer');
       if (topbar) topbar.textContent = display;
       if (hero) hero.textContent = display;
+      if (modal) modal.textContent = display;
       if (remaining > 0) setTimeout(updateTimers, 1000);
     }
     updateTimers();
+  })();
+
+  // Show the urgency offer once per session, after the visitor has had time to read.
+  (function() {
+    const modal = document.getElementById('urgency-modal');
+    if (!modal || sessionStorage.getItem('lp_urgency_seen')) return;
+
+    const closeModal = () => {
+      modal.hidden = true;
+      document.body.classList.remove('modal-open');
+    };
+
+    modal.querySelectorAll('[data-close-urgency]').forEach(button => {
+      button.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && !modal.hidden) closeModal();
+    });
+
+    setTimeout(() => {
+      modal.hidden = false;
+      document.body.classList.add('modal-open');
+      sessionStorage.setItem('lp_urgency_seen', '1');
+      modal.querySelector('.urgency-modal-close').focus();
+    }, 8000);
   })();
 
   // "Pessoas visualizando agora" — fluctuates realistically
