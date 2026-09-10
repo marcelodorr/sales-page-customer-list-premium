@@ -218,6 +218,32 @@ img { max-width: 100%; display: block; }
 .price-installment strong { color: var(--gold-bright); font-weight: 700; }
 .price-installment small { color: var(--text-faint); }
 
+.hero-proof-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: -8px 0 18px;
+  max-width: 480px;
+}
+.hero-proof-strip div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 10px 12px;
+  background: rgba(255, 193, 7, 0.06);
+  border-left: 2px solid var(--gold);
+}
+.hero-proof-strip strong {
+  color: var(--gold-bright);
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+.hero-proof-strip span {
+  color: var(--text-dim);
+  font-size: 11px;
+  line-height: 1.25;
+}
+
 /* ---------- BUTTONS ---------- */
 .btn-cta {
   display: inline-flex;
@@ -288,6 +314,11 @@ img { max-width: 100%; display: block; }
   content: '✓';
   color: var(--green);
   font-weight: 800;
+}
+
+@media (max-width: 520px) {
+  .hero-proof-strip span { font-size: 10px; }
+  .hero-proof-strip div { padding: 9px 8px; }
 }
 
 /* ---------- HERO VISUAL ---------- */
